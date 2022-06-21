@@ -7,7 +7,7 @@ const register = async (req, res) => {
     const { name, email, password } = req.body;
     const user = await User.findOne({ email });
     if (user) {
-        throw new Conflict(`User with ${email} already exist`)
+        throw new Conflict("Email in use")
     }
     const hashPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
     const result = await User.create({ name, email, password: hashPassword });
@@ -16,9 +16,9 @@ const register = async (req, res) => {
         code: 201,
         data: {
             user: {
-                email,
-                name,
-                // subscription: "starter"
+                name: result.name,
+                email: result.email,
+                subscription: result.subscription,
             }
         }
     })

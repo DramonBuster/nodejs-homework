@@ -6,7 +6,8 @@ const {
 const {
     User,
     userRegisterJoiSchema,
-    userLoginJoiSchema
+    userLoginJoiSchema,
+    userUpdateSubscriptionSchema
 } = require("./user");
 
 module.exports = {
@@ -15,5 +16,6 @@ module.exports = {
     Contact,
     User,
     userRegisterJoiSchema,
-    userLoginJoiSchema
+    userLoginJoiSchema,
+    userUpdateSubscriptionSchema
 }
