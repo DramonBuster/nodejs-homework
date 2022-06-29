@@ -17,11 +17,9 @@ const register = async (req, res) => {
     const hashPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
     const result = await User.create({ name, email, password: hashPassword, avatarUrl, verificationToken });
 
-    console.log(email)
-
     const mail = {
         to: email,
-        subject: "подтверждение мейла",
+        subject: "Подтверждение мейла",
         html: `<a target="_blank" href="http://localhost:3000/api/users/verify/${verificationToken}">Подтвердить почту</a>`
         
     };

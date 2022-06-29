@@ -1,3 +1,4 @@
+// const createError = require('http-errors')
 const sgMail = require("@sendgrid/mail")
 require('dotenv').config()
 
@@ -14,6 +15,7 @@ const sendEmail = async (data) => {
         // .then(() => console.log("Email send success"))
         // .catch(error => console.log(error.message))
     } catch (error) {
+        console.log(error.message);
         throw error;
     }
     
