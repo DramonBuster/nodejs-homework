@@ -10,7 +10,8 @@ const getCurrent = async (req, res) => {
             user: {
                 name: user.name,
                 email: user.email,
-                subscription: user.subscription
+                subscription: user.subscription,
+                avatarURL: user.avatarURL
             }
         }
     })
